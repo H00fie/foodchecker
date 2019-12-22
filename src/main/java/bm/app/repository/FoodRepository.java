@@ -1,4 +1,4 @@
-package bm.app.repositories;
+package bm.app.repository;
 
 import bm.app.model.Food;
 import org.hibernate.Session;

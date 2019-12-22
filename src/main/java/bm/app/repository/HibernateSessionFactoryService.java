@@ -1,4 +1,4 @@
-package bm.app.repositories;
+package bm.app.repository;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
