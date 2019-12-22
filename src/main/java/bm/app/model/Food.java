@@ -5,13 +5,13 @@ public class Food {
     private String kindOfFood;
     private String nameOfFood;
     private int amount;
-    private boolean ifHealthy;
+    private String ifHealthy;
 
     public Food(){
 
     }
 
-    public Food(String kindOfFood, String nameOfFood, int amount, boolean ifHealthy) {
+    public Food(String kindOfFood, String nameOfFood, int amount, String ifHealthy) {
         this.kindOfFood = kindOfFood;
         this.nameOfFood = nameOfFood;
         this.amount = amount;
@@ -42,11 +42,11 @@ public class Food {
         this.amount = amount;
     }
 
-    public boolean isIfHealthy() {
+    public String isIfHealthy() {
         return ifHealthy;
     }
 
-    public void setIfHealthy(boolean ifHealthy) {
+    public void setIfHealthy(String ifHealthy) {
         this.ifHealthy = ifHealthy;
     }
 }

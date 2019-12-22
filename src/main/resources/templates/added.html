@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="header">You added food, yay.</div>
+<div th:text="'Kind of food added: ' + ${kindOfFoodParameter}"/>
+<div th:text="'Name of food added: ' + ${nameOfFoodParameter}"/>
+<div th:text="'Amount of food added: ' + ${amountParameter}"/>
+<div th:text="'Is it healthy? ' + ${ifHealthyParameter}"/>
+</body>
+</html>
