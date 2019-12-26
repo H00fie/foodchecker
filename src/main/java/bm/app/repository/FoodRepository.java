@@ -22,10 +22,10 @@ public class FoodRepository {
         session.close();
     }
 
-    public Food getAllRecords(){
+    public List<Food> getAllRecords(){
 
         Session session2 = this.hsfs.getSession();
-        Food foods = (Food) session2.createQuery("SELECT * FROM bm.app.model.Food", Food.class).list();
+        List<Food> foods = (List<Food>) session2.createQuery("SELECT * FROM bm.app.model.Food");
         session2.close();
         return foods;
 

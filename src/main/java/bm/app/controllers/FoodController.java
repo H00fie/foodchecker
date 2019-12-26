@@ -58,7 +58,7 @@ public class FoodController {
 
     @RequestMapping(value = "/landing page", method = RequestMethod.POST)
     public String dataAcquire(Model model) {
-        Food allNomnoms = (Food) foodRepository.getAllRecords();
+        List<Food> allNomnoms = (List<Food>) foodRepository.getAllRecords();
         model.addAttribute("foods", allNomnoms);
         return "allrecords";
     }
