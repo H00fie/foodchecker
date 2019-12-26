@@ -58,4 +58,15 @@ public class Food {
     public void setIfHealthy(String ifHealthy) {
         this.ifHealthy = ifHealthy;
     }
+
+    @Override
+    public String toString() {
+        return "Food{" +
+                "id=" + id +
+                ", kindOfFood='" + kindOfFood + '\'' +
+                ", nameOfFood='" + nameOfFood + '\'' +
+                ", amount=" + amount +
+                ", ifHealthy='" + ifHealthy + '\'' +
+                '}';
+    }
 }

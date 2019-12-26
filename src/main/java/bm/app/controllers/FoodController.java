@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Controller
 public class FoodController {
 
@@ -16,15 +18,20 @@ public class FoodController {
     FoodRepository foodRepository;
 
 
-
     @RequestMapping("/landingpage")
-    public String landingPage(){
+    public String landingPage() {
         return "landingpage";
     }
 
     @RequestMapping(value = "added", method = RequestMethod.GET)
-    public String addedPage(){
+    public String addedPage() {
         return "added";
+    }
+
+    @RequestMapping("/allrecords")
+    public String allRecords() {
+        return "allrecords";
+
     }
 
     @RequestMapping(value = "/landingpage", method = RequestMethod.POST)
@@ -32,7 +39,7 @@ public class FoodController {
                              @RequestParam() String nameOfFoodParameter,
                              @RequestParam() int amountParameter,
                              @RequestParam() String ifHealthyParameter,
-                             Model model){
+                             Model model) {
 
         Food newFood = new Food(kindOfFoodParameter, nameOfFoodParameter, amountParameter, ifHealthyParameter);
         newFood.setKindOfFood(kindOfFoodParameter);
@@ -49,7 +56,12 @@ public class FoodController {
 
     }
 
-
+    @RequestMapping(value = "/landing page", method = RequestMethod.POST)
+    public String dataAcquire(Model model) {
+        Food allNomnoms = (Food) foodRepository.getAllRecords();
+        model.addAttribute("foods", allNomnoms);
+        return "allrecords";
+    }
 
 
 }
